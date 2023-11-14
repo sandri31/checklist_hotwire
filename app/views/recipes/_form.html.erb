@@ -34,17 +34,6 @@
                                       id: "add-recipe_step" %>
 
   <div>
-    <%= form.fields_for :recipe_steps do |recipe_step_form| %>
-      <%= recipe_step_form.hidden_field :id %>
-
-      <div>
-        <%= recipe_step_form.label :description, style: "display: block" %>
-        <%= recipe_step_form.text_field :description %>
-      </div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "Enregistrer" %>
   </div>
 <% end %>

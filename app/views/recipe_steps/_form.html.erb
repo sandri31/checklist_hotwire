@@ -6,7 +6,7 @@
     <%= form.text_field :description %>
   </div>
 
-  <%= form.submit "destroy step", formaction: recipe_step_path(form.index, form.object.id),
+  <%= form.submit "Supprimer l'étape", formaction: recipe_step_path(form.index, form.object.id),
                                   formmethod: :delete,
                                   formnovalidate: true,
                                   data: { turbo_frame: "recipe_step_#{form.index}" } %>
