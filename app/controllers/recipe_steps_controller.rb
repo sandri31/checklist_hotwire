@@ -4,7 +4,7 @@ class RecipeStepsController < ApplicationController
   def new; end
 
   def destroy
-    @project = Project.new(tasks: [Task.new])
+    @recipe = Recipe.new(recipe_steps: [RecipeStep.new])
   end
 
   private
