@@ -49,7 +49,12 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
-    @recipe = Recipe.new(recipe_steps: [RecipeStep.new])
+    @recipe.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
