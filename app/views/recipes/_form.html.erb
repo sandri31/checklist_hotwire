@@ -22,6 +22,12 @@
   </div>
 
   <h4>Etapes</h4>
+  <div id="recipe_steps">
+    <%= form.fields_for :recipe_steps do |recipe_step_form| %>
+      <%= render "recipe_steps/form", form: recipe_step_form %>
+    <% end %>
+  </div>
+
   <div>
     <%= form.fields_for :recipe_steps do |recipe_step_form| %>
       <%= recipe_step_form.hidden_field :id %>
