@@ -12,13 +12,25 @@
   <% end %>
 
   <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_field :description %>
   </div>
 
+  <h4>Etapes</h4>
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.fields_for :recipe_steps do |recipe_step_form| %>
+      <%= recipe_step_form.hidden_field :id %>
+
+      <div>
+        <%= recipe_step_form.label :description, style: "display: block" %>
+        <%= recipe_step_form.text_field :description %>
+      </div>
+    <% end %>
   </div>
 
   <div>
