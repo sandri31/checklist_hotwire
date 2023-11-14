@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
-    @recipe = Recipe.new
+    @recipe = Recipe.new(recipe_steps: [RecipeStep.new])
   end
 
   # GET /recipes/1/edit
@@ -65,6 +65,6 @@ class RecipesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recipe_params
-      params.require(:recipe).permit(:description, :name)
+      params.require(:recipe).permit(:description, :name, recipes_steps_attributes: %i[id description _destroy])
     end
 end
