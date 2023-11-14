@@ -1,5 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
+<% @recipe_steps.each do |step| %>
+  <p>
+    <strong>Étape <%= step.step_number %>:</strong><br />
+    <%= step.description %>
+  </p>
+<% end %>
+
 <%= render @recipe %>
 
 <div>
