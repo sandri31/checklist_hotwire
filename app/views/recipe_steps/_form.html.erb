@@ -1,6 +1,8 @@
-<%= form.hidden_field :id %>
+<%= turbo_frame_tag "recipe_step_#{form.index}" do %>
+  <%= form.hidden_field :id %>
 
-<div>
-  <%= form.label :description, style: "display: block" %>
-  <%= form.text_field :description %>
-</div>
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+<% end %>
