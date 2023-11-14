@@ -1,13 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<% @recipe_steps.each do |step| %>
+<%= render @recipe %>
+
+<% @recipe.recipe_steps.each_with_index do |step, index| %>
   <p>
-    <strong>Étape <%= step.step_number %>:</strong><br />
+    <strong>Étape <%= index + 1 %> :</strong><br />
     <%= step.description %>
   </p>
 <% end %>
-
-<%= render @recipe %>
 
 <div>
   <%= link_to "Modifier la recette", edit_recipe_path(@recipe) %> |
