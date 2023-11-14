@@ -28,6 +28,11 @@
     <% end %>
   </div>
 
+  <%= form.submit "Ajoute une étape", formaction: recipe_step_path(@recipe.recipe_steps.size),
+                                      formmethod: :post,
+                                      formnovalidate: true,
+                                      id: "add-task" %>
+
   <div>
     <%= form.fields_for :recipe_steps do |recipe_step_form| %>
       <%= recipe_step_form.hidden_field :id %>

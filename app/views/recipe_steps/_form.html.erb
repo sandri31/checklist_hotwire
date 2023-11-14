@@ -6,8 +6,8 @@
     <%= form.text_field :description %>
   </div>
 
-  <%= form.submit "destroy step", formaction: task_path(form.index, form.object.id),
+  <%= form.submit "destroy step", formaction: recipe_step_path(form.index, form.object.id),
                                   formmethod: :delete,
                                   formnovalidate: true,
-                                  data: { turbo_frame: "task_#{form.index}" } %>
+                                  data: { turbo_frame: "recipe_step_#{form.index}" } %>
 <% end %>

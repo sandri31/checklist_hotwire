@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :recipe_steps, only: [], params: :index do
     member do
       delete '(id)' => 'recipe_steps#destroy', as: ''
+      post '/' => 'recipe_steps#create'
     end
   end
 
